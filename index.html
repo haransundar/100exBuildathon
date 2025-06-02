@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Feedback Analyzer</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            background-color: #f0f2f5; /* Light grey background */
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .chat-container {
+            background-color: #ffffff; /* White background for the chat card */
+            border-radius: 12px; /* Rounded corners */
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            width: 90%;
+            max-width: 700px; /* Max width of the chat container */
+            overflow: hidden; /* Ensures shadow and border radius apply correctly */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .chat-header {
+            background-color: #007bff; /* Primary color for the header */
+            color: white;
+            padding: 18px 25px;
+            text-align: center;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .chat-header h1 {
+            margin: 0;
+            font-size: 1.5em; /* Larger title */
+            font-weight: 600;
+        }
+        
+        .chat-header p {
+            margin-top: 5px;
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .langflow-chat-wrapper {
+            padding: 0px; /* No padding needed if langflow-chat handles its own */
+            height: 70vh; /* Adjust height as needed, e.g., 500px or 70vh */
+            max-height: 600px; /* Maximum height */
+            display: flex; /* Helps child take full height if needed */
+        }
+
+        /* The langflow-chat component itself will take the space */
+        langflow-chat {
+            width: 100%;
+            height: 100%; /* Make langflow-chat fill its wrapper */
+            border: none; /* Remove default borders if any */
+        }
+
+        .footer-text {
+            margin-top: 25px;
+            font-size: 0.85em;
+            color: #6c757d;
+            text-align: center;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .chat-container {
+                width: 95%;
+                margin-top: 10px;
+                margin-bottom: 10px;
+            }
+            .chat-header h1 {
+                font-size: 1.3em;
+            }
+            .langflow-chat-wrapper {
+                height: 75vh; /* Adjust height for mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="chat-container">
+        <div class="chat-header">
+            <h1>AI Feedback Analyzer 📊</h1>
+            <p>Get instant insights from your customer feedback!</p>
+        </div>
+        <div class="langflow-chat-wrapper">
+            <langflow-chat
+                window_title="AI Feedback Analyzer" flow_id="bc7571e6-d92c-4677-88a1-d0fe64a31c90"
+                host_url="https://astra.datastax.com"
+                chat_inputs='[]' chat_input_field="input_value" api_key="" user_id="web_user" tweaks='{}' input_type="chat" ></langflow-chat>
+        </div>
+    </div>
+
+    <p class="footer-text">Powered by Langflow & Google Generative AI</p>
+
+    <script
+      src="https://cdn.jsdelivr.net/gh/logspace-ai/langflow-embedded-chat@v1.0.7/dist/build/static/js/bundle.min.js">
+    </script>
+
+</body>
+</html>
